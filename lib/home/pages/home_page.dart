@@ -38,26 +38,57 @@ class HomePageScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Center(
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(width: 5),
-                              Text(
-                                "4.9",
-                                style: TextStyle(
-                                  color: Color(0xff1E1E1E),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(width: 5),
+                            Column(
+                              children: [
+                                Text(
+                                  "50% OFF DISCOUNT",
+                                  style: TextStyle(
+                                    color: Color(0xff62322D),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                              ),
-                              SvgPicture.asset("assets/images/offer.svg"),
-                            ],
-                          ),
-                        ],
-                      ),
+                                Text(
+                                  "CUPON CODE : 125865",
+                                  style: TextStyle(
+                                    color: Color(0xff62322D),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/images/offer.svg",
+                              height: 40,
+                              width: 40,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 12),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SvgPicture.asset(
+                              "assets/images/offer.svg",
+                              height: 40,
+                              width: 40,
+                            ),
+                            Column(
+                              children: [
+                                Text("Hurry up!"),
+                                Text("Skin care only !"),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),
