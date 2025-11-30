@@ -1,5 +1,7 @@
 import 'package:cosmatics/helpers/app_colors.dart';
 import 'package:cosmatics/widgets/app_field.dart';
+import 'package:cosmatics/widgets/card_item.dart';
+import 'package:cosmatics/widgets/card_item_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,30 +14,32 @@ class HomePageScreen extends StatelessWidget {
       backgroundColor: AppColors.scaffoldBackGroundColor,
       body: Padding(
         padding: const EdgeInsets.only(right: 13, left: 13),
-        child: Column(
-          children: [
-            SizedBox(height: 40),
-            AppField(
-              hintText: "Search",
-              suffixicon: Icon(Icons.search, color: Color(0xff8E8EA9)),
-            ),
-            SizedBox(height: 15),
-            Stack(
-              children: [
-                Image.asset(
-                  "assets/images/home 1.png",
-                  width: 365,
-                  height: 320,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(height: 40),
+              AppField(
+                hintText: "Search",
+                suffixicon: SvgPicture.asset(
+                  "assets/icons/search.svg",
+                  width: 10,
+                  height: 11,
                 ),
+              ),
+              // SizedBox(height: 15),
+              Stack(
+                alignment: AlignmentDirectional.center,
+                children: [
+                  Image.network(
+                    "https://images.pexels.com/photos/2834934/pexels-photo-2834934.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    width: double.infinity,
+                    height: 300,
+                  ),
 
-                Positioned(
-                  // left: 20,
-                  top: 100,
-                  child: Container(
-                    width: 365,
-                    height: 120,
+                  Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Color(0xffE9DCD3).withOpacity(0.8),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Column(
@@ -43,31 +47,18 @@ class HomePageScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            SizedBox(width: 5),
-                            Column(
-                              children: [
-                                Text(
-                                  "50% OFF DISCOUNT",
-                                  style: TextStyle(
-                                    color: Color(0xff62322D),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  "CUPON CODE : 125865",
-                                  style: TextStyle(
-                                    color: Color(0xff62322D),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              "50% OFF DISCOUNT\nCUPON CODE : 125865",
+                              style: TextStyle(
+                                color: Color(0xff62322D),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                             SvgPicture.asset(
-                              "assets/images/offer.svg",
-                              height: 40,
-                              width: 40,
+                              "assets/icons/offer.svg",
+                              height: 50,
+                              width: 50,
                             ),
                           ],
                         ),
@@ -76,25 +67,37 @@ class HomePageScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             SvgPicture.asset(
-                              "assets/images/offer.svg",
-                              height: 40,
-                              width: 40,
+                              "assets/icons/offer.svg",
+                              height: 50,
+                              width: 50,
                             ),
-                            Column(
-                              children: [
-                                Text("Hurry up!"),
-                                Text("Skin care only !"),
-                              ],
+                            Text(
+                              "Hurry up!\nSkin care only !",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.primaryColor,
+                              ),
                             ),
                           ],
                         ),
                       ],
                     ),
                   ),
+                ],
+              ),
+              Text(
+                textAlign: TextAlign.start,
+                "Top rated products",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primaryColor,
                 ),
-              ],
-            ),
-          ],
+              ),
+              CardItemList(),
+            ],
+          ),
         ),
       ),
     );

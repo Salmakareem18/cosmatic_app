@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppField extends StatelessWidget {
   AppField({super.key, this.hintText, this.suffixicon});
   String? hintText;
-  Icon? suffixicon;
+  Widget? suffixicon;
   @override
   Widget build(BuildContext context) {
     return Padding(
