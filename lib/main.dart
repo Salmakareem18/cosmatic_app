@@ -1,4 +1,4 @@
-import 'package:cosmatics/home/pages/on_boarding.dart';
+import 'package:cosmatics/home/pages/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
+      home: Splash(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xffD75D72)),
       ),
